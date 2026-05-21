@@ -78,7 +78,8 @@ Environment variables take precedence over the stored config.
 | `pricing.input_cache_read` / `.input_cache_write` | `cost.cache_read` / `.cache_write` |
 | `architecture.input_modalities` | `modalities.input` (`file` → `pdf`) |
 | `architecture.output_modalities` | `modalities.output` |
-| `output_modalities` includes `image` | **model skipped** (image generation not supported) |
+| `output_modalities` present but does not include `text` | **model skipped** (filters image-generation, embedding, TTS, and other non-chat output types) |
+| no `architecture` field and id matches `embedding`, `tts`, `whisper`, `image-*`, `dream`, etc. | **model skipped** (bare-stub non-chat models with no metadata) |
 | `supported_parameters` includes `tools` | `tool_call: true` |
 | `supported_parameters` includes `reasoning` / `include_reasoning` / `reasoning_effort` | `reasoning: true` |
 | `supported_parameters` includes `temperature` | `temperature: true` |

@@ -27,13 +27,71 @@ describe("buildModels", () => {
   })
 
   test("filters out image-output models", () => {
-    // The fixture has 0 image-output models, but ensure the filter path is exercised
     const fakeImageModel = {
       id: "fake-image-gen",
       architecture: { output_modalities: ["image"] },
     }
     const filtered = buildModels([...fixture.data, fakeImageModel])
     expect(filtered["fake-image-gen"]).toBeUndefined()
+  })
+
+  test("filters out embedding models (empty output_modalities)", () => {
+    const embeddingModel = {
+      id: "text-embedding-3",
+      architecture: { output_modalities: [] },
+    }
+    const filtered = buildModels([embeddingModel])
+    expect(filtered["text-embedding-3"]).toBeUndefined()
+  })
+
+  test("filters out models with non-text output (e.g. embeddings label)", () => {
+    const embeddingModel = {
+      id: "embed-model",
+      architecture: { output_modalities: ["embeddings"] },
+    }
+    const filtered = buildModels([embeddingModel])
+    expect(filtered["embed-model"]).toBeUndefined()
+  })
+
+  test("keeps models with no output_modalities field (safe default)", () => {
+    const noModalityModel = {
+      id: "no-modality",
+      supported_parameters: [],
+    }
+    const result = buildModels([noModalityModel])
+    expect(result["no-modality"]).toBeDefined()
+    expect(result["no-modality"]?.modalities.output).toEqual(["text"])
+  })
+
+  test("filters bare-stub embedding models by id pattern (no architecture)", () => {
+    const stubs = [
+      { id: "text-embedding-3-small" },
+      { id: "gemini-embedding-001" },
+      { id: "gemini-embedding-2" },
+      { id: "embed-anything" },
+    ]
+    const result = buildModels(stubs)
+    for (const m of stubs) expect(result[m.id]).toBeUndefined()
+  })
+
+  test("filters bare-stub TTS and image-gen models by id pattern (no architecture)", () => {
+    const stubs = [
+      { id: "gpt-4o-mini-tts" },
+      { id: "whisper-large-v3" },
+      { id: "gpt-image-2" },
+      { id: "seedream-5-lite" },
+    ]
+    const result = buildModels(stubs)
+    for (const m of stubs) expect(result[m.id]).toBeUndefined()
+  })
+
+  test("keeps bare-stub models whose id looks like a chat model", () => {
+    const stubs = [
+      { id: "small-fast" },
+      { id: "my-custom-llm" },
+    ]
+    const result = buildModels(stubs)
+    for (const m of stubs) expect(result[m.id]).toBeDefined()
   })
 
   test("all models have required fields", () => {

@@ -63,12 +63,27 @@ function buildInputModalities(model: PlexusApiModel): Modality[] {
   return mapped.length > 0 ? [...new Set(mapped)] : ["text"]
 }
 
+// Patterns that identify non-chat models when no architecture metadata is present.
+// Matches: embedding, embeddings, tts, whisper, image-gen names, etc.
+const NON_CHAT_ID_PATTERN = /embedding|embed|tts|whisper|image-[0-9]|image\b.*gen|diffusion|dall-e|stable-diff|sdxl|dream/i
+
 function buildOutputModalities(model: PlexusApiModel): Modality[] | null {
-  const raw = model.architecture?.output_modalities ?? ["text"]
-  // Skip models that generate images
-  if (raw.includes("image")) return null
-  const mapped = raw.map(mapModality).filter((m): m is Modality => m !== null)
-  return mapped.length > 0 ? [...new Set(mapped)] : ["text"]
+  const raw = model.architecture?.output_modalities
+
+  if (raw !== undefined) {
+    // Architecture is present — require text output. Filters embedding ([]),
+    // image-only (['image']), and any other non-chat output types.
+    if (!raw.includes("text")) return null
+    const mapped = raw.map(mapModality).filter((m): m is Modality => m !== null)
+    return mapped.length > 0 ? [...new Set(mapped)] : ["text"]
+  }
+
+  // No architecture at all — use id heuristics to catch bare stubs like
+  // text-embedding-3-small, seedream-5-lite, gpt-4o-mini-tts, whisper-large-v3.
+  if (NON_CHAT_ID_PATTERN.test(model.id)) return null
+
+  // No architecture but name looks like a chat model — assume text output.
+  return ["text"]
 }
 
 /**
