@@ -1,0 +1,34 @@
+{
+  "name": "@mcowger/opencode-plexus",
+  "version": "0.1.0",
+  "description": "OpenCode plugin: Plexus provider with dynamic model discovery",
+  "type": "module",
+  "module": "./dist/index.js",
+  "main": "./dist/index.js",
+  "exports": {
+    ".": "./dist/index.js",
+    "./server": "./dist/index.js"
+  },
+  "files": ["dist", "README.md", "LICENSE"],
+  "license": "MIT",
+  "publishConfig": { "access": "public" },
+  "scripts": {
+    "build": "bun build src/index.ts --outdir=dist --target=bun --format=esm --packages=external",
+    "watch": "bun build src/index.ts --outdir=dist --target=bun --format=esm --packages=external --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "bun test ./tests",
+    "prepublishOnly": "bun run build"
+  },
+  "dependencies": {
+    "@opencode-ai/plugin": "^1.14.46",
+    "@opencode-ai/sdk": "^1.14.46",
+    "zod": "^4.0.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5"
+  }
+}
