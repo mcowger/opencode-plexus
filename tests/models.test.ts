@@ -4,10 +4,10 @@ import { join } from "node:path"
 import { buildModels } from "../src/models"
 import type { PlexusApiResponse } from "../src/types"
 
-// Load the real Plexus models fixture from the pi-plexus repo
+// Load the real Plexus models fixture (vendored from pi-plexus)
 const MODELS_FIXTURE_PATH = join(
   import.meta.dir,
-  "../../pi-plexus/models.json",
+  "fixtures/models.json",
 )
 const fixtureRaw = readFileSync(MODELS_FIXTURE_PATH, "utf8")
 const fixture = JSON.parse(fixtureRaw) as PlexusApiResponse

@@ -1,0 +1,917 @@
+{
+	"object": "list",
+	"data": [
+		{
+			"id": "minimax-m2.7",
+			"object": "model",
+			"created": 1778736769,
+			"owned_by": "plexus",
+			"name": "MiniMax: MiniMax M2.7",
+			"description": "MiniMax-M2.7 is a next-generation large language model designed for autonomous, real-world productivity and continuous improvement. Built to actively participate in its own evolution, M2.7 integrates advanced agentic capabilities through multi-agent...",
+			"context_length": 196608,
+			"architecture": {
+				"modality": "text->text",
+				"input_modalities": ["text"],
+				"output_modalities": ["text"],
+				"tokenizer": "Other",
+				"instruct_type": null
+			},
+			"pricing": {
+				"prompt": "0.000000279",
+				"completion": "0.0000012"
+			},
+			"supported_parameters": [
+				"frequency_penalty",
+				"include_reasoning",
+				"logit_bias",
+				"logprobs",
+				"max_tokens",
+				"min_p",
+				"presence_penalty",
+				"reasoning",
+				"repetition_penalty",
+				"response_format",
+				"seed",
+				"stop",
+				"structured_outputs",
+				"temperature",
+				"tool_choice",
+				"tools",
+				"top_k",
+				"top_logprobs",
+				"top_p"
+			],
+			"top_provider": {
+				"context_length": 196608,
+				"max_completion_tokens": 131072,
+				"is_moderated": false
+			}
+		},
+		{
+			"id": "claude-sonnet-4-6",
+			"object": "model",
+			"created": 1778736769,
+			"owned_by": "plexus",
+			"name": "Anthropic: Claude Sonnet 4.6",
+			"description": "Sonnet 4.6 is Anthropic's most capable Sonnet-class model yet, with frontier performance across coding, agents, and professional work. It excels at iterative development, complex codebase navigation, end-to-end project management with...",
+			"context_length": 1000000,
+			"architecture": {
+				"modality": "text+image+file->text",
+				"input_modalities": ["text", "image", "file"],
+				"output_modalities": ["text"],
+				"tokenizer": "Claude",
+				"instruct_type": null
+			},
+			"pricing": {
+				"prompt": "0.000003",
+				"completion": "0.000015",
+				"input_cache_read": "0.0000003",
+				"input_cache_write": "0.00000375"
+			},
+			"supported_parameters": [
+				"include_reasoning",
+				"max_completion_tokens",
+				"max_tokens",
+				"reasoning",
+				"response_format",
+				"stop",
+				"structured_outputs",
+				"temperature",
+				"tool_choice",
+				"tools",
+				"top_k",
+				"top_p",
+				"verbosity"
+			],
+			"top_provider": {
+				"context_length": 1000000,
+				"max_completion_tokens": 128000,
+				"is_moderated": true
+			}
+		},
+		{
+			"id": "claude-haiku-4-5",
+			"object": "model",
+			"created": 1778736769,
+			"owned_by": "plexus",
+			"preferred_api": ["messages"],
+			"pi_provider": "anthropic",
+			"pi_model": "claude-haiku-4-5",
+			"name": "Anthropic: Claude Haiku 4.5",
+			"description": "Claude Haiku 4.5 is Anthropic’s fastest and most efficient model, delivering near-frontier intelligence at a fraction of the cost and latency of larger Claude models. Matching Claude Sonnet 4’s performance...",
+			"context_length": 200000,
+			"architecture": {
+				"modality": "text+image+file->text",
+				"input_modalities": ["text", "image", "file"],
+				"output_modalities": ["text"],
+				"tokenizer": "Claude",
+				"instruct_type": null
+			},
+			"pricing": {
+				"prompt": "0.000001",
+				"completion": "0.000005",
+				"input_cache_read": "0.0000001",
+				"input_cache_write": "0.00000125"
+			},
+			"supported_parameters": [
+				"include_reasoning",
+				"max_tokens",
+				"reasoning",
+				"response_format",
+				"stop",
+				"structured_outputs",
+				"temperature",
+				"tool_choice",
+				"tools",
+				"top_k",
+				"top_p"
+			],
+			"top_provider": {
+				"context_length": 200000,
+				"max_completion_tokens": 64000,
+				"is_moderated": true
+			}
+		},
+		{
+			"id": "gpt-5.4",
+			"object": "model",
+			"created": 1778736769,
+			"owned_by": "plexus",
+			"name": "OpenAI: GPT-5.4",
+			"description": "GPT-5.4 is OpenAI’s latest frontier model, unifying the Codex and GPT lines into a single system. It features a 1M+ token context window (922K input, 128K output) with support for...",
+			"context_length": 1050000,
+			"architecture": {
+				"modality": "text+image+file->text",
+				"input_modalities": ["text", "image", "file"],
+				"output_modalities": ["text"],
+				"tokenizer": "GPT",
+				"instruct_type": null
+			},
+			"pricing": {
+				"prompt": "0.0000025",
+				"completion": "0.000015",
+				"input_cache_read": "0.00000025"
+			},
+			"supported_parameters": [
+				"include_reasoning",
+				"max_completion_tokens",
+				"max_tokens",
+				"reasoning",
+				"response_format",
+				"seed",
+				"structured_outputs",
+				"tool_choice",
+				"tools"
+			],
+			"top_provider": {
+				"context_length": 1050000,
+				"max_completion_tokens": 128000,
+				"is_moderated": false
+			}
+		},
+		{
+			"id": "gpt-5.4-mini",
+			"object": "model",
+			"created": 1778736769,
+			"owned_by": "plexus",
+			"name": "OpenAI: GPT-5.4 Mini",
+			"description": "GPT-5.4 mini brings the core capabilities of GPT-5.4 to a faster, more efficient model optimized for high-throughput workloads. It supports text and image inputs with strong performance across reasoning, coding,...",
+			"context_length": 400000,
+			"architecture": {
+				"modality": "text+image+file->text",
+				"input_modalities": ["file", "image", "text"],
+				"output_modalities": ["text"],
+				"tokenizer": "GPT",
+				"instruct_type": null
+			},
+			"pricing": {
+				"prompt": "0.00000075",
+				"completion": "0.0000045",
+				"input_cache_read": "0.000000075"
+			},
+			"supported_parameters": [
+				"include_reasoning",
+				"max_completion_tokens",
+				"max_tokens",
+				"reasoning",
+				"response_format",
+				"seed",
+				"structured_outputs",
+				"tool_choice",
+				"tools"
+			],
+			"top_provider": {
+				"context_length": 400000,
+				"max_completion_tokens": 128000,
+				"is_moderated": false
+			}
+		},
+		{
+			"id": "sonar-pro",
+			"object": "model",
+			"created": 1778736769,
+			"owned_by": "plexus",
+			"name": "Perplexity: Sonar Pro Search",
+			"description": "Exclusively available on the OpenRouter API, Sonar Pro's new Pro Search mode is Perplexity's most advanced agentic search system. It is designed for deeper reasoning and analysis. Pricing is based...",
+			"context_length": 200000,
+			"architecture": {
+				"modality": "text+image->text",
+				"input_modalities": ["text", "image"],
+				"output_modalities": ["text"],
+				"tokenizer": "Other",
+				"instruct_type": null
+			},
+			"pricing": {
+				"prompt": "0.000003",
+				"completion": "0.000015"
+			},
+			"supported_parameters": [
+				"frequency_penalty",
+				"include_reasoning",
+				"max_tokens",
+				"presence_penalty",
+				"reasoning",
+				"structured_outputs",
+				"temperature",
+				"top_k",
+				"top_p",
+				"web_search_options"
+			],
+			"top_provider": {
+				"context_length": 200000,
+				"max_completion_tokens": 8000,
+				"is_moderated": false
+			}
+		},
+		{
+			"id": "sonar-deep-research",
+			"object": "model",
+			"created": 1778736769,
+			"owned_by": "plexus",
+			"name": "Perplexity: Sonar Deep Research",
+			"description": "Sonar Deep Research is a research-focused model designed for multi-step retrieval, synthesis, and reasoning across complex topics. It autonomously searches, reads, and evaluates sources, refining its approach as it gathers...",
+			"context_length": 128000,
+			"architecture": {
+				"modality": "text->text",
+				"input_modalities": ["text"],
+				"output_modalities": ["text"],
+				"tokenizer": "Other",
+				"instruct_type": "deepseek-r1"
+			},
+			"pricing": {
+				"prompt": "0.000002",
+				"completion": "0.000008"
+			},
+			"supported_parameters": [
+				"frequency_penalty",
+				"include_reasoning",
+				"max_tokens",
+				"presence_penalty",
+				"reasoning",
+				"temperature",
+				"top_k",
+				"top_p",
+				"web_search_options"
+			],
+			"top_provider": {
+				"context_length": 128000,
+				"max_completion_tokens": null,
+				"is_moderated": false
+			}
+		},
+		{
+			"id": "small-fast",
+			"object": "model",
+			"created": 1778736769,
+			"owned_by": "plexus",
+			"name": "small-fast",
+			"context_length": 128000,
+			"architecture": {
+				"input_modalities": ["text"],
+				"output_modalities": ["text"]
+			},
+			"pricing": {
+				"prompt": "0",
+				"completion": "0"
+			},
+			"supported_parameters": [],
+			"top_provider": {
+				"context_length": 128000
+			}
+		},
+		{
+			"id": "glm-5.1",
+			"object": "model",
+			"created": 1778736769,
+			"owned_by": "plexus",
+			"name": "Z.ai: GLM 5.1",
+			"description": "GLM-5.1 delivers a major leap in coding capability, with particularly significant gains in handling long-horizon tasks. Unlike previous models built around minute-level interactions, GLM-5.1 can work independently and continuously on...",
+			"context_length": 202752,
+			"architecture": {
+				"modality": "text->text",
+				"input_modalities": ["text"],
+				"output_modalities": ["text"],
+				"tokenizer": "Other",
+				"instruct_type": null
+			},
+			"pricing": {
+				"prompt": "0.00000105",
+				"completion": "0.0000035",
+				"input_cache_read": "0.000000525"
+			},
+			"supported_parameters": [
+				"frequency_penalty",
+				"include_reasoning",
+				"logit_bias",
+				"logprobs",
+				"max_tokens",
+				"min_p",
+				"parallel_tool_calls",
+				"presence_penalty",
+				"reasoning",
+				"reasoning_effort",
+				"repetition_penalty",
+				"response_format",
+				"seed",
+				"stop",
+				"structured_outputs",
+				"temperature",
+				"tool_choice",
+				"tools",
+				"top_k",
+				"top_logprobs",
+				"top_p"
+			],
+			"top_provider": {
+				"context_length": 202752,
+				"max_completion_tokens": 65535,
+				"is_moderated": false
+			}
+		},
+		{
+			"id": "qwen3.5-397b-a17b",
+			"object": "model",
+			"created": 1778736769,
+			"owned_by": "plexus",
+			"name": "Qwen: Qwen3.5 397B A17B",
+			"description": "The Qwen3.5 series 397B-A17B native vision-language model is built on a hybrid architecture that integrates a linear attention mechanism with a sparse mixture-of-experts model, achieving higher inference efficiency. It delivers...",
+			"context_length": 262144,
+			"architecture": {
+				"modality": "text+image+video->text",
+				"input_modalities": ["text", "image", "video"],
+				"output_modalities": ["text"],
+				"tokenizer": "Qwen3",
+				"instruct_type": null
+			},
+			"pricing": {
+				"prompt": "0.00000039",
+				"completion": "0.00000234"
+			},
+			"supported_parameters": [
+				"frequency_penalty",
+				"include_reasoning",
+				"logit_bias",
+				"logprobs",
+				"max_tokens",
+				"min_p",
+				"presence_penalty",
+				"reasoning",
+				"repetition_penalty",
+				"response_format",
+				"seed",
+				"stop",
+				"structured_outputs",
+				"temperature",
+				"tool_choice",
+				"tools",
+				"top_k",
+				"top_logprobs",
+				"top_p"
+			],
+			"top_provider": {
+				"context_length": 262144,
+				"max_completion_tokens": 65536,
+				"is_moderated": false
+			}
+		},
+		{
+			"id": "claude-opus-4-7",
+			"object": "model",
+			"created": 1778736769,
+			"owned_by": "plexus",
+			"name": "Anthropic: Claude Opus 4.7",
+			"description": "Opus 4.7 is the next generation of Anthropic's Opus family, built for long-running, asynchronous agents. Building on the coding and agentic strengths of Opus 4.6, it delivers stronger performance on...",
+			"context_length": 1000000,
+			"architecture": {
+				"modality": "text+image+file->text",
+				"input_modalities": ["text", "image", "file"],
+				"output_modalities": ["text"],
+				"tokenizer": "Claude",
+				"instruct_type": null
+			},
+			"pricing": {
+				"prompt": "0.000005",
+				"completion": "0.000025",
+				"input_cache_read": "0.0000005",
+				"input_cache_write": "0.00000625"
+			},
+			"supported_parameters": [
+				"include_reasoning",
+				"max_tokens",
+				"reasoning",
+				"response_format",
+				"stop",
+				"structured_outputs",
+				"tool_choice",
+				"tools",
+				"verbosity"
+			],
+			"top_provider": {
+				"context_length": 1000000,
+				"max_completion_tokens": 128000,
+				"is_moderated": false
+			}
+		},
+		{
+			"id": "gpt-oss-20b",
+			"object": "model",
+			"created": 1778736769,
+			"owned_by": "plexus",
+			"name": "OpenAI: gpt-oss-20b",
+			"description": "gpt-oss-20b is an open-weight 21B parameter model released by OpenAI under the Apache 2.0 license. It uses a Mixture-of-Experts (MoE) architecture with 3.6B active parameters per forward pass, optimized for...",
+			"context_length": 131072,
+			"architecture": {
+				"modality": "text->text",
+				"input_modalities": ["text"],
+				"output_modalities": ["text"],
+				"tokenizer": "GPT",
+				"instruct_type": null
+			},
+			"pricing": {
+				"prompt": "0.00000003",
+				"completion": "0.00000014"
+			},
+			"supported_parameters": [
+				"frequency_penalty",
+				"include_reasoning",
+				"logit_bias",
+				"logprobs",
+				"max_tokens",
+				"min_p",
+				"presence_penalty",
+				"reasoning",
+				"repetition_penalty",
+				"response_format",
+				"seed",
+				"stop",
+				"structured_outputs",
+				"temperature",
+				"tool_choice",
+				"tools",
+				"top_k",
+				"top_logprobs",
+				"top_p"
+			],
+			"top_provider": {
+				"context_length": 131072,
+				"max_completion_tokens": 131072,
+				"is_moderated": false
+			}
+		},
+		{
+			"id": "kimi-k2.6",
+			"object": "model",
+			"created": 1778736769,
+			"owned_by": "plexus",
+			"name": "MoonshotAI: Kimi K2.6",
+			"description": "Kimi K2.6 is Moonshot AI's next-generation multimodal model, designed for long-horizon coding, coding-driven UI/UX generation, and multi-agent orchestration. It handles complex end-to-end coding tasks across Python, Rust, and Go, and...",
+			"context_length": 262142,
+			"architecture": {
+				"modality": "text+image->text",
+				"input_modalities": ["text", "image"],
+				"output_modalities": ["text"],
+				"tokenizer": "Other",
+				"instruct_type": null
+			},
+			"pricing": {
+				"prompt": "0.00000074",
+				"completion": "0.0000035",
+				"input_cache_read": "0.00000025"
+			},
+			"supported_parameters": [
+				"frequency_penalty",
+				"include_reasoning",
+				"logit_bias",
+				"logprobs",
+				"max_tokens",
+				"min_p",
+				"parallel_tool_calls",
+				"presence_penalty",
+				"reasoning",
+				"reasoning_effort",
+				"repetition_penalty",
+				"response_format",
+				"seed",
+				"stop",
+				"structured_outputs",
+				"temperature",
+				"tool_choice",
+				"tools",
+				"top_k",
+				"top_logprobs",
+				"top_p"
+			],
+			"top_provider": {
+				"context_length": 262142,
+				"max_completion_tokens": 262142,
+				"is_moderated": false
+			}
+		},
+		{
+			"id": "deepseek-v4-pro",
+			"object": "model",
+			"created": 1778736769,
+			"owned_by": "plexus",
+			"name": "DeepSeek: DeepSeek V4 Pro",
+			"description": "DeepSeek V4 Pro is a large-scale Mixture-of-Experts model from DeepSeek with 1.6T total parameters and 49B activated parameters, supporting a 1M-token context window. It is designed for advanced reasoning, coding,...",
+			"context_length": 1048576,
+			"architecture": {
+				"modality": "text->text",
+				"input_modalities": ["text"],
+				"output_modalities": ["text"],
+				"tokenizer": "DeepSeek",
+				"instruct_type": null
+			},
+			"pricing": {
+				"prompt": "0.000000435",
+				"completion": "0.00000087",
+				"input_cache_read": "0.000000003625"
+			},
+			"supported_parameters": [
+				"frequency_penalty",
+				"include_reasoning",
+				"logit_bias",
+				"logprobs",
+				"max_tokens",
+				"min_p",
+				"presence_penalty",
+				"reasoning",
+				"repetition_penalty",
+				"response_format",
+				"seed",
+				"stop",
+				"structured_outputs",
+				"temperature",
+				"tool_choice",
+				"tools",
+				"top_k",
+				"top_logprobs",
+				"top_p"
+			],
+			"top_provider": {
+				"context_length": 1048576,
+				"max_completion_tokens": 384000,
+				"is_moderated": false
+			}
+		},
+		{
+			"id": "deepseek-v4-flash",
+			"object": "model",
+			"created": 1778736769,
+			"owned_by": "plexus",
+			"pi_provider": "deepseek",
+			"pi_model": "deepseek-v4-flash",
+			"pi_options": {
+				"requiresReasoningContentOnAssistantMessages": true,
+				"thinkingFormat": "deepseek"
+			},
+			"name": "DeepSeek: DeepSeek V4 Flash",
+			"description": "DeepSeek V4 Flash is an efficiency-optimized Mixture-of-Experts model from DeepSeek with 284B total parameters and 13B activated parameters, supporting a 1M-token context window. It is designed for fast inference and...",
+			"context_length": 1048576,
+			"architecture": {
+				"modality": "text->text",
+				"input_modalities": ["text"],
+				"output_modalities": ["text"],
+				"tokenizer": "DeepSeek",
+				"instruct_type": null
+			},
+			"pricing": {
+				"prompt": "0.000000126",
+				"completion": "0.000000252",
+				"input_cache_read": "0.0000000252"
+			},
+			"supported_parameters": [
+				"frequency_penalty",
+				"include_reasoning",
+				"logit_bias",
+				"logprobs",
+				"max_tokens",
+				"min_p",
+				"presence_penalty",
+				"reasoning",
+				"repetition_penalty",
+				"response_format",
+				"seed",
+				"stop",
+				"structured_outputs",
+				"temperature",
+				"tool_choice",
+				"tools",
+				"top_k",
+				"top_logprobs",
+				"top_p"
+			],
+			"top_provider": {
+				"context_length": 1048576,
+				"max_completion_tokens": 131072,
+				"is_moderated": false
+			}
+		},
+		{
+			"id": "gpt-5.4-nano",
+			"object": "model",
+			"created": 1778736769,
+			"owned_by": "plexus",
+			"name": "OpenAI: GPT-5.4 Nano",
+			"description": "GPT-5.4 nano is the most lightweight and cost-efficient variant of the GPT-5.4 family, optimized for speed-critical and high-volume tasks. It supports text and image inputs and is designed for low-latency...",
+			"context_length": 400000,
+			"architecture": {
+				"modality": "text+image+file->text",
+				"input_modalities": ["file", "image", "text"],
+				"output_modalities": ["text"],
+				"tokenizer": "GPT",
+				"instruct_type": null
+			},
+			"pricing": {
+				"prompt": "0.0000002",
+				"completion": "0.00000125",
+				"input_cache_read": "0.00000002"
+			},
+			"supported_parameters": [
+				"include_reasoning",
+				"max_completion_tokens",
+				"max_tokens",
+				"reasoning",
+				"response_format",
+				"seed",
+				"structured_outputs",
+				"tool_choice",
+				"tools"
+			],
+			"top_provider": {
+				"context_length": 400000,
+				"max_completion_tokens": 128000,
+				"is_moderated": false
+			}
+		},
+		{
+			"id": "qwen3.6-plus",
+			"object": "model",
+			"created": 1778736769,
+			"owned_by": "plexus",
+			"name": "Qwen: Qwen3.6 Plus",
+			"description": "Qwen 3.6 Plus builds on a hybrid architecture that combines efficient linear attention with sparse mixture-of-experts routing, enabling strong scalability and high-performance inference. Compared to the 3.5 series, it delivers...",
+			"context_length": 1000000,
+			"architecture": {
+				"modality": "text+image+video->text",
+				"input_modalities": ["text", "image", "video"],
+				"output_modalities": ["text"],
+				"tokenizer": "Qwen3",
+				"instruct_type": null
+			},
+			"pricing": {
+				"prompt": "0.000000325",
+				"completion": "0.00000195",
+				"input_cache_write": "0.00000040625"
+			},
+			"supported_parameters": [
+				"include_reasoning",
+				"max_tokens",
+				"presence_penalty",
+				"reasoning",
+				"response_format",
+				"seed",
+				"structured_outputs",
+				"temperature",
+				"tool_choice",
+				"tools",
+				"top_p"
+			],
+			"top_provider": {
+				"context_length": 1000000,
+				"max_completion_tokens": 65536,
+				"is_moderated": false
+			}
+		},
+		{
+			"id": "qwen3.5-plus-02-15",
+			"object": "model",
+			"created": 1778736769,
+			"owned_by": "plexus"
+		},
+		{
+			"id": "gemini-3-flash-preview",
+			"object": "model",
+			"created": 1778736769,
+			"owned_by": "plexus",
+			"name": "Google: Gemini 3 Flash Preview",
+			"description": "Gemini 3 Flash Preview is a high speed, high value thinking model designed for agentic workflows, multi turn chat, and coding assistance. It delivers near Pro level reasoning and tool...",
+			"context_length": 1048576,
+			"architecture": {
+				"modality": "text+image+file+audio+video->text",
+				"input_modalities": ["text", "image", "file", "audio", "video"],
+				"output_modalities": ["text"],
+				"tokenizer": "Gemini",
+				"instruct_type": null
+			},
+			"pricing": {
+				"prompt": "0.0000005",
+				"completion": "0.000003",
+				"input_cache_read": "0.00000005",
+				"input_cache_write": "0.00000008333333333333334"
+			},
+			"supported_parameters": [
+				"include_reasoning",
+				"max_tokens",
+				"reasoning",
+				"response_format",
+				"seed",
+				"stop",
+				"structured_outputs",
+				"temperature",
+				"tool_choice",
+				"tools",
+				"top_p"
+			],
+			"top_provider": {
+				"context_length": 1048576,
+				"max_completion_tokens": 65536,
+				"is_moderated": false
+			}
+		},
+		{
+			"id": "gemini-3.1-flash-lite",
+			"object": "model",
+			"created": 1778736769,
+			"owned_by": "plexus",
+			"name": "Google: Gemini 3.1 Flash Lite",
+			"description": "Gemini 3.1 Flash Lite is Google’s GA high-efficiency multimodal model optimized for low-latency, high-volume workloads. It supports text, image, video, audio, and PDF inputs, and is designed for lightweight agentic...",
+			"context_length": 1048576,
+			"architecture": {
+				"modality": "text+image+file+audio+video->text",
+				"input_modalities": ["text", "image", "video", "file", "audio"],
+				"output_modalities": ["text"],
+				"tokenizer": "Gemini",
+				"instruct_type": null
+			},
+			"pricing": {
+				"prompt": "0.00000025",
+				"completion": "0.0000015",
+				"input_cache_read": "0.000000025",
+				"input_cache_write": "0.00000008333333333333334"
+			},
+			"supported_parameters": [
+				"include_reasoning",
+				"max_tokens",
+				"reasoning",
+				"response_format",
+				"seed",
+				"stop",
+				"structured_outputs",
+				"temperature",
+				"tool_choice",
+				"tools",
+				"top_p"
+			],
+			"top_provider": {
+				"context_length": 1048576,
+				"max_completion_tokens": 65536,
+				"is_moderated": false
+			}
+		},
+		{
+			"id": "gemini-3.1-pro-preview",
+			"object": "model",
+			"created": 1778736769,
+			"owned_by": "plexus",
+			"name": "Google: Gemini 3.1 Pro Preview Custom Tools",
+			"description": "Gemini 3.1 Pro Preview Custom Tools is a variant of Gemini 3.1 Pro that improves tool selection behavior by preventing overuse of a general bash tool when more efficient third-party...",
+			"context_length": 1048576,
+			"architecture": {
+				"modality": "text+image+file+audio+video->text",
+				"input_modalities": ["text", "audio", "image", "video", "file"],
+				"output_modalities": ["text"],
+				"tokenizer": "Gemini",
+				"instruct_type": null
+			},
+			"pricing": {
+				"prompt": "0.000002",
+				"completion": "0.000012",
+				"input_cache_read": "0.0000002",
+				"input_cache_write": "0.000000375"
+			},
+			"supported_parameters": [
+				"include_reasoning",
+				"max_tokens",
+				"reasoning",
+				"response_format",
+				"seed",
+				"stop",
+				"structured_outputs",
+				"temperature",
+				"tool_choice",
+				"tools",
+				"top_p"
+			],
+			"top_provider": {
+				"context_length": 1048576,
+				"max_completion_tokens": 65536,
+				"is_moderated": false
+			}
+		},
+		{
+			"id": "mimo-v2.5",
+			"object": "model",
+			"created": 1778736769,
+			"owned_by": "plexus",
+			"name": "Xiaomi: MiMo-V2.5",
+			"description": "MiMo-V2.5 is a native omnimodal model by Xiaomi. It delivers Pro-level agentic performance at roughly half the inference cost, while surpassing MiMo-V2-Omni in multimodal perception across image and video understanding...",
+			"context_length": 1048576,
+			"architecture": {
+				"modality": "text+image+audio+video->text",
+				"input_modalities": ["text", "audio", "image", "video"],
+				"output_modalities": ["text"],
+				"tokenizer": "Other",
+				"instruct_type": null
+			},
+			"pricing": {
+				"prompt": "0.0000004",
+				"completion": "0.000002",
+				"input_cache_read": "0.00000008"
+			},
+			"supported_parameters": [
+				"frequency_penalty",
+				"include_reasoning",
+				"max_tokens",
+				"presence_penalty",
+				"reasoning",
+				"response_format",
+				"stop",
+				"temperature",
+				"tool_choice",
+				"tools",
+				"top_p"
+			],
+			"top_provider": {
+				"context_length": 1048576,
+				"max_completion_tokens": 131072,
+				"is_moderated": false
+			}
+		},
+		{
+			"id": "mimo-v2.5-pro",
+			"object": "model",
+			"created": 1778736769,
+			"owned_by": "plexus",
+			"name": "Xiaomi: MiMo-V2.5-Pro",
+			"description": "MiMo-V2.5-Pro is Xiaomi’s flagship model, delivering strong performance in general agentic capabilities, complex software engineering, and long-horizon tasks, with top rankings on benchmarks such as ClawEval, GDPVal, and SWE-bench Pro....",
+			"context_length": 1048576,
+			"architecture": {
+				"modality": "text->text",
+				"input_modalities": ["text"],
+				"output_modalities": ["text"],
+				"tokenizer": "Other",
+				"instruct_type": null
+			},
+			"pricing": {
+				"prompt": "0.000001",
+				"completion": "0.000003",
+				"input_cache_read": "0.0000002"
+			},
+			"supported_parameters": [
+				"frequency_penalty",
+				"include_reasoning",
+				"logit_bias",
+				"max_tokens",
+				"min_p",
+				"presence_penalty",
+				"reasoning",
+				"repetition_penalty",
+				"response_format",
+				"seed",
+				"stop",
+				"structured_outputs",
+				"temperature",
+				"tool_choice",
+				"tools",
+				"top_k",
+				"top_p"
+			],
+			"top_provider": {
+				"context_length": 1048576,
+				"max_completion_tokens": 16384,
+				"is_moderated": false
+			}
+		}
+	]
+}
