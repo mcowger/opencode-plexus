@@ -11,6 +11,10 @@
   },
   "files": ["dist", "README.md", "LICENSE"],
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mcowger/opencode-plexus.git"
+  },
   "publishConfig": {
     "access": "public"
   },
